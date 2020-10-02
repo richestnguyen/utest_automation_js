@@ -1,0 +1,36 @@
+{
+  "name": "utest_automation",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm run build:live",
+    "build": "e2e/node_modules/.bin/tsc -p ../e2e",
+    "tsc": "e2e/node_modules/.bin/tsc",
+    "test": "e2e/node_modules/.bin/protractor protractor.conf.js",
+    "debug": "node --inspect-brk e2e/node_modules/.bin/protractor conf.js",
+    "pretest": "npm run tsc && npm run webdriver-update",
+    "webdriver-update": "webdriver-manager update"
+  },
+  "author": "pnp",
+  "license": "ISC",
+  "dependencies": {
+    "@types/jasmine": "2.8.6",
+    "@types/node": "11.13.8",
+    "@types/selenium-webdriver": "4.0.8",
+    "fs-extra": "7.0.1",
+    "jasmine": "2.4.1",
+    "jasmine-reporters": "^2.3.2",
+    "lodash": "4.17.15",
+    "protractor-html-reporter-2": "^1.0.4",
+    "ts-node": "8.0.3",
+    "typescript": "3.4.5"
+  },
+  "devDependencies": {
+    "@types/lodash": "4.14.129",
+    "babel-register": "6.26.0",
+    "eslint": "5.16.0",
+    "protractor": "5.4.2",
+    "protractor-beautiful-reporter": "1.2.7"
+  }
+}
